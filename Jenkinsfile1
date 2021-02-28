@@ -12,7 +12,10 @@ pipeline {
          
         stage('Build') {
             steps {
-                 def myhome=tool name: 'Maven', type: 'maven'
+            environment {
+                    myhome=tool name: 'Maven', type: 'maven'
+                  }
+                 
                  sh '${myhome}/bin/mvn package'
             }
         }
