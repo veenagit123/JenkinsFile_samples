@@ -2,10 +2,16 @@ pipeline {
     agent any
 
     stages {
+    
+        stage('GIT') 
+         { 
+            git 'https://github.com/gkdevops/PetClinic'
+         }
+         
         stage('Build') {
             steps {
                  def myhome=tool name: 'Maven', type: 'maven'
-                 sh "${myhome}/bin/mvn --version"
+                 sh "${myhome}/bin/mvn package"
             }
         }
     }
