@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                  def myhome=tool name: 'Maven', type: 'maven'
-                 sh "${myhome}/bin/mvn package"
+                 sh '${myhome}/bin/mvn package'
             }
         }
     }
