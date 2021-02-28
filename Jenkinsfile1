@@ -1,7 +1,7 @@
 def myhome=tool name: 'Maven', type: 'maven'
 
 pipeline {
-    agent { label node }
+    agent label
 
     stages {
     
