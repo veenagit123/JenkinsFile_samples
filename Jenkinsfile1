@@ -1,3 +1,5 @@
+def myhome=tool name: 'Maven', type: 'maven'
+
 pipeline {
     agent any
 
@@ -12,10 +14,7 @@ pipeline {
          
         stage('Build') {
             steps {
-            environment {
-                    myhome="tool" name="Maven",type="maven"
-                  }
-                 
+            
                  sh '${myhome}/bin/mvn package'
             }
         }
