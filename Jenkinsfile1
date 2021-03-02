@@ -4,7 +4,7 @@ pipeline {
       stage('GIT') 
          { 
          steps{
-            git 'https://github.com/gkdevops/PetClinic'
+            git 'https://github.com/veenagit123/gs-maven/tree/master/initial'
          }
        }       
    
