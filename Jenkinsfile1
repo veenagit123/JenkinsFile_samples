@@ -1,15 +1,18 @@
-node {
-    stage('GIT') 
+pipeline {
+   agent any
+    stages{
+      stage('GIT') 
          { 
+         steps{
             git 'https://github.com/gkdevops/PetClinic'
          }
-              
+       }       
     stage('Build')
          {
-            def myhome=tool name: 'Maven', type: 'maven'
-             sh "${myhome}/bin/mvn package"
-             
+          steps{
+                sh "mvn package"
+             }
           }
-              
+       }       
 }
 
